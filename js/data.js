@@ -1,0 +1,66 @@
+/* ===== EDIT HERE ===== */
+const CFG={name:"Saffron & Smoke",wa:"923009260391",phone:"0300-9260391",email:"syedhasanshahqadri@gmail.com",cur:"Rs",delivery:150,codFee:200,easypaisa:"0332-3556402",jazzcash:"0315-9262470"};
+const U=id=>"https://images.unsplash.com/photo-"+id+"?auto=format&fit=crop&w=600&q=70";
+/* image pools per category; each dish picks one. Replace any ID with your own photo URL. */
+const IMG=[
+ ["1540189549336-e6e99c3679fe","1498837167922-ddd27525d352","1504674900247-0877df9cc836"],
+ ["1568901346375-23c9450c58cd","1551782450-a2132b4ba21d","1529042410759-befb1204b468"],
+ ["1513104890138-7c749659a591","1565299624946-b28f40a0ae38","1473093295043-cdd812d0e601","1621996346565-e3dbc646d9a9"],
+ ["1555939594-58d7cb561ad1","1600891964092-4316c288032e","1558030006-450675393462","1414235077428-338989a2e8c0"],
+ ["1578985545062-69928b1d9587","1567620905732-2d1ec7ab7445","1551024506-0bccd828d307"],
+ ["1544145945-f90425340c7e","1495474472287-4d71bcdd2085"]
+];
+const CATS=["Starters","Burgers","Pizza & Pasta","BBQ & Mains","Desserts","Drinks"];
+const D=[
+[0,"Crispy Fries",290,"Golden fries with house seasoning"],
+[0,"Chicken Wings",590,"Six spicy wings with dip"],
+[0,"Onion Rings",350,"Beer-battered and crunchy"],
+[0,"Veg Spring Rolls",420,"Served with sweet chilli sauce"],
+[0,"Cheese Sticks",480,"Mozzarella with marinara"],
+[0,"Chicken Corn Soup",360,"Warm, light and comforting"],
+[0,"Garden Salad",330,"Fresh greens with lemon dressing"],
+[0,"Crispy Prawns",890,"Lightly fried with tartar sauce"],
+[1,"Classic Beef Burger",650,"Beef patty, lettuce, tomato, sauce"],
+[1,"Double Cheese Burger",850,"Two patties and melted cheese"],
+[1,"Crispy Chicken Burger",590,"Fried fillet with mayo"],
+[1,"Spicy Zinger",620,"Hot and crunchy chicken fillet"],
+[1,"Club Sandwich",560,"Chicken, egg, cheese, with fries"],
+[1,"Chicken Wrap",480,"Grilled chicken with garlic sauce"],
+[1,"Veggie Burger",450,"Herbed vegetable patty"],
+[1,"Grilled Hot Dog",380,"Beef sausage with mustard"],
+[2,"Margherita Pizza",950,"Tomato, mozzarella, basil"],
+[2,"Pepperoni Pizza",1190,"Loaded with beef pepperoni"],
+[2,"Chicken Tikka Pizza",1150,"Desi flavours on a classic base"],
+[2,"Veggie Supreme Pizza",1050,"Peppers, olives, mushrooms"],
+[2,"Creamy Alfredo Pasta",890,"Chicken in white cream sauce"],
+[2,"Penne Arrabbiata",780,"Spicy tomato and garlic"],
+[2,"Lasagna",990,"Baked layers with cheese"],
+[2,"Mac & Cheese",690,"Creamy baked macaroni"],
+[3,"Chicken Tikka",720,"Charcoal grilled, with naan"],
+[3,"Seekh Kabab",780,"Minced beef, four skewers"],
+[3,"Malai Boti",840,"Creamy, tender and mild"],
+[3,"Grilled Steak",1690,"Beef steak with pepper sauce"],
+[3,"Chicken Biryani",550,"Fragrant rice with raita"],
+[3,"Mutton Karahi",1850,"Half portion, fresh tomato masala"],
+[3,"Butter Chicken Rice",760,"Rich gravy over steamed rice"],
+[3,"Grilled Fish",1190,"Lemon-herb fillet with vegetables"],
+[3,"Daal Mash",420,"Slow cooked, with butter naan"],
+[4,"Chocolate Brownie",390,"Warm, with vanilla ice cream"],
+[4,"Cheesecake Slice",450,"Creamy New York style"],
+[4,"Caramel Flan",320,"Silky custard with caramel"],
+[4,"Ice Cream Scoops",290,"Vanilla, chocolate or strawberry"],
+[4,"Nutella Pancakes",520,"Fluffy stack with hazelnut spread"],
+[4,"Glazed Donuts",340,"Set of three"],
+[4,"Kheer",280,"Traditional rice pudding"],
+[4,"Gulab Jamun",260,"Four warm syrupy dumplings"],
+[5,"Fresh Lemonade",220,"Chilled with mint"],
+[5,"Mint Margarita",260,"Refreshing mint and lemon"],
+[5,"Orange Juice",300,"Freshly squeezed"],
+[5,"Mango Shake",340,"Thick, made with ripe mangoes"],
+[5,"Chocolate Shake",360,"Rich and creamy"],
+[5,"Cappuccino",320,"Double shot, frothy milk"],
+[5,"Doodh Patti Chai",150,"Classic strong milk tea"],
+[5,"Soft Drink",120,"Cola, lemon-lime or orange"],
+[5,"Mineral Water",80,"500 ml bottle"]
+];
+D.forEach((d,i)=>{const p=IMG[d[0]];d.img=U(p[i%p.length])});
